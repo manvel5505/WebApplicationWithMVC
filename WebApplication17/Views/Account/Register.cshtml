@@ -1,0 +1,55 @@
+@model UserRegister
+@{
+    ViewData["Title"] = "Registr";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="dhd-col2">
+        <div class="form_wrapper">
+            <form method="post" asp-action="Register" asp-controller="Account">
+        
+                <h1 style="color:#212529; text-align: center">Create account</h1>
+                <hr />
+                <div>
+                    <p>
+                        <label asp-for="Username">Username: </label>
+                        <input placeholder="Username" title="Username" maxlength="42" size="42" style="display: grid" asp-for="Username" />
+                        <span class="spanislav" style="display: block" asp-validation-for="Username"></span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <label asp-for="Email">Eamil: </label>
+                        <input placeholder="Email" title="Email" maxlength="42" size="42" style="display: grid" asp-for="Email" />
+                        <span class="spanislav" style="display: block" asp-validation-for="Email"></span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <label asp-for="Password">Password: </label>
+                        <input placeholder="Password" title="Password" maxlength="42" size="42" style="display: grid" asp-for="Password" />
+                        <span class="spanislav" asp-validation-for="Password"></span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <label asp-for="RepeatPassword">Repeat Password: </label>
+                        <input placeholder="Repeat Password" title="Repeat Password" maxlength="42" size="42" style="display: grid" asp-for="RepeatPassword" />
+                        <span asp-validation-for="RepeatPassword"></span>
+                    </p>
+                </div>
+                <div class="butt-and-href">
+                    <p class="coll-exp">@ViewBag.ErrorMessage</p>
+                    <button class="but1-reg" type="submit"><strong>Sign Up</strong></button>
+        
+                    <p style="display: inline-block;"><a class="href-animat-style" href="https://localhost:7101/Account/Login">Have Account?</a></p>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
